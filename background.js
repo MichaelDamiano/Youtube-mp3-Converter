@@ -17,13 +17,13 @@ chrome.extension.onConnect.addListener(function(port)
     {
         //we must save msg into a variable because we will use this to send the url to the other port in the if statement above
         url = msg;
-        setTimeout(getTab, 3000, port, url); 
+        setTimeout(getTab, 3000); 
     }
     });
  });
 
 //switch the active tab from youtube to ytmp3
-function getTab(port, msg) 
+function getTab() 
 {
     chrome.tabs.query({}, function(tabs) 
     {
@@ -37,7 +37,7 @@ function getTab(port, msg)
             }
         }
         //start the download
-        chrome.tabs.executeScript(tabID, {file: "/download.js"});
+        chrome.tabs.executeScript(null, {file: "/download.js"});
   });
 }
 
