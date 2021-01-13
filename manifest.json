@@ -5,7 +5,7 @@
   
 	"name": "Youtube mp3 Converter",
   
-	"description": "This extension automates the process of converting a youtube video to an mp3 file using ytmp3.cc",
+	"description": "This extension simplifies the process of converting a youtube video to an mp3 file into the press of a button using ytmp3.cc",
   
 	"version": "1.0",
 
@@ -20,18 +20,6 @@
   
 	},
 
-	
-	"content_scripts": 
-	[
-{
-      
-		"matches": ["https://www.youtube.com/watch?v=*"],
-      
-		"js": ["app.js" , "download.js"]
-	}
-],
-
-
 	"browser_action": 
 	{
     		"default_icon": "icon16.png"
@@ -45,8 +33,7 @@
     
 		"tabs",
 		"activeTab", 
-		"https://www.youtube.com/*"
-,
+		"https://www.youtube.com/*",
 		"https://ytmp3.cc/*",
 		"downloads"
 	]
